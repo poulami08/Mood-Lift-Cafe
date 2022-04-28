@@ -3,16 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package dao;
-import java.sql*;
+import java.sql.*;
 /**
  *
  * @author POULAMI
  */
 public class ConnectionProvider {
-    public static connection getCon(){
+    public static Connection getCon(){
         try{
-            Class.forName("com_mysql")
-            
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms?useSSL=false","root","123456");
+            return con;
         }
         catch(Exception e){
             return null;
@@ -20,3 +21,4 @@ public class ConnectionProvider {
     }
     
 }
+
