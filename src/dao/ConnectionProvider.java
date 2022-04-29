@@ -12,12 +12,14 @@ public class ConnectionProvider {
     public static Connection getCon(){
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms?useSSL=false","root","123456");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cms?useSSL=false","root","poulami123");
             return con;
         }
         catch(Exception e){
             return null;
+            
         }
+        
     }
     
 }
