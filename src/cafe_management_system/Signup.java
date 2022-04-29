@@ -4,17 +4,52 @@
  */
 package cafe_management_system;
 
+import javax.swing.JOptionPane;
+import model.User;
+import dao.Userdao;
 /**
  *
  * @author POULAMI
  */
 public class Signup extends javax.swing.JFrame {
+    
+    public String emailPattern = "^[a-zA-Z0-9]+[@]+[a-zA-Z0-9]+[.]+[a-zA-Z0-9]+$";
+    public String mobileNumberPattern = "^[0-9]*$";
 
     /**
      * Creates new form Signup
      */
     public Signup() {
         initComponents();
+        btnsave.setEnabled(false);
+        
+    }
+    
+    public void clear(){
+        txtname.setText("");
+        txtemail.setText("");
+        txtmn.setText("");
+        txtaddress.setText("");
+        txtsq.setText("");
+        txtans.setText("");
+        txtpassword.setText("");
+        btnsave.setEnabled(false);
+        
+    }
+    
+    public void validateFields(){
+        String name = txtname.getText();
+        String email = txtemail.getText();
+        String mobileNumber = txtmn.getText();
+        String address = txtaddress.getText();
+        String password = txtpassword.getText();
+        String securityQuestion = txtsq.getText();
+        String answer = txtans.getText();
+        if(!name.equals("") && email.matches(emailPattern) && mobileNumber.matches(mobileNumberPattern) && mobileNumber.length()== 10 && !address.equals("") && !password.equals("") && !securityQuestion.equals("") && !answer.equals(""))
+            btnsave.setEnabled(true);
+        else
+            btnsave.setEnabled(false);
+        
     }
 
     /**
@@ -41,11 +76,11 @@ public class Signup extends javax.swing.JFrame {
         txtpassword = new javax.swing.JPasswordField();
         txtaddress = new javax.swing.JTextField();
         txtmn = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnsave = new javax.swing.JButton();
+        btnexit = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        btnclear = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,7 +90,7 @@ public class Signup extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 255));
         jLabel1.setText("Signup");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 70, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 70, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel2.setText("Name");
@@ -91,15 +126,30 @@ public class Signup extends javax.swing.JFrame {
                 txtnameActionPerformed(evt);
             }
         });
+        txtname.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtnameKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtname, new org.netbeans.lib.awtextra.AbsoluteConstraints(603, 185, 343, -1));
 
         txtemail.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtemail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtemailKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(603, 229, 343, -1));
 
         txtsq.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         txtsq.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtsqActionPerformed(evt);
+            }
+        });
+        txtsq.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtsqKeyReleased(evt);
             }
         });
         getContentPane().add(txtsq, new org.netbeans.lib.awtextra.AbsoluteConstraints(603, 405, 343, -1));
@@ -110,9 +160,19 @@ public class Signup extends javax.swing.JFrame {
                 txtansActionPerformed(evt);
             }
         });
+        txtans.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtansKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtans, new org.netbeans.lib.awtextra.AbsoluteConstraints(603, 449, 343, -1));
 
         txtpassword.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtpassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtpasswordKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtpassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(603, 361, 343, -1));
 
         txtaddress.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -121,46 +181,61 @@ public class Signup extends javax.swing.JFrame {
                 txtaddressActionPerformed(evt);
             }
         });
+        txtaddress.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtaddressKeyReleased(evt);
+            }
+        });
         getContentPane().add(txtaddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(603, 317, 343, -1));
 
         txtmn.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        getContentPane().add(txtmn, new org.netbeans.lib.awtextra.AbsoluteConstraints(603, 273, 343, -1));
-
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save.png"))); // NOI18N
-        jButton1.setText("Save");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        txtmn.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtmnKeyReleased(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 490, -1, -1));
+        getContentPane().add(txtmn, new org.netbeans.lib.awtextra.AbsoluteConstraints(603, 273, 343, -1));
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/exit small.png"))); // NOI18N
-        jButton2.setText("Exit");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 490, -1, -1));
+        btnsave.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnsave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/save.png"))); // NOI18N
+        btnsave.setText("Save");
+        btnsave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsaveActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnsave, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 490, -1, -1));
+
+        btnexit.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnexit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/exit small.png"))); // NOI18N
+        btnexit.setText("Exit");
+        btnexit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnexitActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnexit, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 490, -1, -1));
 
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton3.setText("Forget Password");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 530, -1, -1));
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 530, -1, -1));
 
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton4.setText("Login");
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 530, -1, -1));
+        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 530, -1, -1));
 
-        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/clear.png"))); // NOI18N
-        jButton5.setText("Clear");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnclear.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnclear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/clear.png"))); // NOI18N
+        btnclear.setText("Clear");
+        btnclear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnclearActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 490, -1, -1));
+        getContentPane().add(btnclear, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 490, -1, -1));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/10.1.jpg"))); // NOI18N
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -130, 1370, 1040));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, -120, 1370, 1040));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -181,13 +256,69 @@ public class Signup extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtansActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnsaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsaveActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        User user = new User();
+        user.setName(txtname.getText());
+        user.setEmail(txtemail.getText());
+        user.setMobileNumber(txtmn.getText());
+        user.setAddress(txtaddress.getText());
+        user.setPassword(txtpassword.getText());
+        user.setSecurityQuestion(txtsq.getText());
+        user.setAnswer(txtans.getText());
+        Userdao.save(user);
+        clear();
+        
+    }//GEN-LAST:event_btnsaveActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btnclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclearActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+        clear();
+    }//GEN-LAST:event_btnclearActionPerformed
+
+    private void btnexitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnexitActionPerformed
+        // TODO add your handling code here:
+        int a = JOptionPane.showConfirmDialog(null, "Do you really want to close the Application","Select",JOptionPane.YES_NO_OPTION);
+        if(a==0)
+        {
+            System.exit(0);
+        }
+    }//GEN-LAST:event_btnexitActionPerformed
+
+    private void txtnameKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtnameKeyReleased
+        // TODO add your handling code here:
+        validateFields();
+    }//GEN-LAST:event_txtnameKeyReleased
+
+    private void txtemailKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtemailKeyReleased
+        // TODO add your handling code here:
+        validateFields();
+    }//GEN-LAST:event_txtemailKeyReleased
+
+    private void txtmnKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtmnKeyReleased
+        // TODO add your handling code here:
+        validateFields();
+    }//GEN-LAST:event_txtmnKeyReleased
+
+    private void txtaddressKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtaddressKeyReleased
+        // TODO add your handling code here:
+        validateFields();
+    }//GEN-LAST:event_txtaddressKeyReleased
+
+    private void txtpasswordKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpasswordKeyReleased
+        // TODO add your handling code here:
+        validateFields();
+    }//GEN-LAST:event_txtpasswordKeyReleased
+
+    private void txtsqKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtsqKeyReleased
+        // TODO add your handling code here:
+        validateFields();
+    }//GEN-LAST:event_txtsqKeyReleased
+
+    private void txtansKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtansKeyReleased
+        // TODO add your handling code here:
+        validateFields();
+    }//GEN-LAST:event_txtansKeyReleased
 
     /**
      * @param args the command line arguments
@@ -225,11 +356,11 @@ public class Signup extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnclear;
+    private javax.swing.JButton btnexit;
+    private javax.swing.JButton btnsave;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

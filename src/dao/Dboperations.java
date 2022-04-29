@@ -17,7 +17,7 @@ public class Dboperations {
             Connection con = ConnectionProvider.getCon();
             Statement st = con.createStatement();
             st.executeUpdate(Query);
-            if(msg.equals(""))
+            if(!msg.equals(""))
             JOptionPane.showMessageDialog(null,msg);
         }
             catch(Exception e){
