@@ -106,6 +106,11 @@ public class Home extends javax.swing.JFrame {
         btnmc.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnmc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/category.png"))); // NOI18N
         btnmc.setText("Manage Category");
+        btnmc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnmcActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnmc, new org.netbeans.lib.awtextra.AbsoluteConstraints(214, 692, -1, -1));
 
         btnnp.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -151,6 +156,11 @@ public class Home extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void btnmcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmcActionPerformed
+        // TODO add your handling code here:
+        new ManageCategory().setVisible(true);
+    }//GEN-LAST:event_btnmcActionPerformed
 
     /**
      * @param args the command line arguments
