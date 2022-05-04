@@ -136,6 +136,11 @@ public class Home extends javax.swing.JFrame {
         btnvu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnvu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/verify users.png"))); // NOI18N
         btnvu.setText("Verify Users");
+        btnvu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnvuActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnvu, new org.netbeans.lib.awtextra.AbsoluteConstraints(918, 692, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/7 (1).jpg"))); // NOI18N
@@ -182,6 +187,11 @@ public class Home extends javax.swing.JFrame {
         new ViewEditDeleteProduct().setVisible(true);
         
     }//GEN-LAST:event_btnvedpActionPerformed
+
+    private void btnvuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvuActionPerformed
+        // TODO add your handling code here:
+        new VerifyUsers().setVisible(true);
+    }//GEN-LAST:event_btnvuActionPerformed
 
     /**
      * @param args the command line arguments
