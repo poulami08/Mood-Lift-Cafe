@@ -97,6 +97,11 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(txtemail, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 200, 350, -1));
 
         txtpassword.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        txtpassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtpasswordActionPerformed(evt);
+            }
+        });
         txtpassword.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtpasswordKeyReleased(evt);
@@ -219,6 +224,10 @@ public class Login extends javax.swing.JFrame {
         // TODO add your handling code here:
         validateFields();
     }//GEN-LAST:event_txtpasswordKeyReleased
+
+    private void txtpasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtpasswordActionPerformed
 
     /**
      * @param args the command line arguments
