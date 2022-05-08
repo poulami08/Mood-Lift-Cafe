@@ -181,11 +181,8 @@ public class Home extends javax.swing.JFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-        int a = JOptionPane.showConfirmDialog(null, "Do you really want to Exit?", "Select", JOptionPane.YES_NO_OPTION);
-        if (a == 0) {
-            System.exit(0);
-            
-        }
+        setVisible(false);
+        new Thankyou().setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void btnmcActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnmcActionPerformed

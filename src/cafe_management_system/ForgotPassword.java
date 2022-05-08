@@ -231,10 +231,8 @@ public class ForgotPassword extends javax.swing.JFrame {
 
     private void btnexitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnexitActionPerformed
         // TODO add your handling code here:
-        int a = JOptionPane.showConfirmDialog(null,"Do you really want to Close the Application","Select",JOptionPane.YES_NO_OPTION);
-        if(a==0){
-            System.exit(0);
-        }
+        setVisible(false);
+        new Thankyou().setVisible(true);
     }//GEN-LAST:event_btnexitActionPerformed
 
     private void btnclearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnclearActionPerformed

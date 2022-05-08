@@ -176,10 +176,8 @@ public class Login extends javax.swing.JFrame {
 
     private void btnexitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnexitActionPerformed
         // TODO add your handling code here:
-        int a = JOptionPane.showConfirmDialog(null, "Do you really want to close the Application","Select",JOptionPane.YES_NO_OPTION);
-        if(a==0){
-            System.exit(0);
-        }
+        setVisible(false);
+        new Thankyou().setVisible(true);
     }//GEN-LAST:event_btnexitActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
