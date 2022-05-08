@@ -82,6 +82,7 @@ public class Signup extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         btnclear = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -246,8 +247,11 @@ public class Signup extends javax.swing.JFrame {
         });
         getContentPane().add(btnclear, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 500, -1, -1));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/10.1.jpg"))); // NOI18N
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -130, 1370, 1040));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Signup page.jpg"))); // NOI18N
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -140, 1370, 1040));
+
+        jLabel10.setText("jLabel10");
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 50, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -383,6 +387,7 @@ public class Signup extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

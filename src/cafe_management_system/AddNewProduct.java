@@ -45,6 +45,7 @@ public class AddNewProduct extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel5 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -55,7 +56,9 @@ public class AddNewProduct extends javax.swing.JFrame {
         txtcategory = new javax.swing.JComboBox<>();
         btnsave = new javax.swing.JButton();
         btnclear = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/9.01.jpg"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(350, 134));
@@ -131,8 +134,8 @@ public class AddNewProduct extends javax.swing.JFrame {
         });
         getContentPane().add(btnclear, new org.netbeans.lib.awtextra.AbsoluteConstraints(479, 259, -1, -1));
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/9.01.jpg"))); // NOI18N
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Smallbackground.jpg"))); // NOI18N
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -224,6 +227,7 @@ public class AddNewProduct extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JComboBox<String> txtcategory;
     private javax.swing.JTextField txtname;
     private javax.swing.JTextField txtprice;
