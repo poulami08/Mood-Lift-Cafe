@@ -105,5 +105,27 @@ public class Userdao {
             JOptionPane.showMessageDialog(null, e);
         }
     }
+    
+    public static void changeSecurityQuestion(String email,String password,String securityQuestion,String answer){
+        try{
+            ResultSet rs = Dboperations.getData("select * from user where email='"+email+"' and password='"+password+"'");
+            if(rs.next()){
+                update(email, securityQuestion, answer);
+                
+            }
+            else{
+                    JOptionPane.showMessageDialog(null,"Password is Wrong");
+                    }
+            
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+    
+    public static void update(String email,String securityQuestion,String answer){
+        String query = "update user set securityQuestion='"+securityQuestion+"',answer='"+answer+"' where email='"+email+"'";
+        Dboperations.setDataOrDelete(query, "Security Question Changed Successfully");
+    }
 
 }

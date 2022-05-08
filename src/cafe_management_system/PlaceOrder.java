@@ -487,7 +487,7 @@ public class PlaceOrder extends javax.swing.JFrame {
         try{
             PdfWriter.getInstance(doc, new FileOutputStream(path + "" + billId +".pdf"));
             doc.open();
-            Paragraph cafeName = new Paragraph("                                                                 Coffee Time\n");
+            Paragraph cafeName = new Paragraph("                                                                 Mood Lift Cafe\n");
             doc.add(cafeName);
             Paragraph starLine = new Paragraph("****************************************************************************************************************");
             doc.add(starLine);
