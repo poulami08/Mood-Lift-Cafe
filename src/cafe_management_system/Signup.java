@@ -217,6 +217,7 @@ public class Signup extends javax.swing.JFrame {
         getContentPane().add(btnexit, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 500, -1, -1));
 
         jButton3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/forgot password.png"))); // NOI18N
         jButton3.setText("Forget Password");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -226,6 +227,7 @@ public class Signup extends javax.swing.JFrame {
         getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 550, -1, -1));
 
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/signup.png"))); // NOI18N
         jButton4.setText("Login");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -245,7 +247,7 @@ public class Signup extends javax.swing.JFrame {
         getContentPane().add(btnclear, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 500, -1, -1));
 
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/10.1.jpg"))); // NOI18N
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, -120, 1370, 1040));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -130, 1370, 1040));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
