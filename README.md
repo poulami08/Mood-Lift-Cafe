@@ -34,7 +34,6 @@
 
 ## View 
 
-<p>&nbsp;</p>
 <p align="center">
 <img width="460" height="300" src="readme images\user view.png">
 <p align="center">
@@ -63,6 +62,7 @@ Admin interface view
 
 *The user table have the detailes of users.The category table have the detailes of categories present in our cafe.The product table have the detailes of products available under each category and the bill table have the detailes of the customer, their orders and the total amount.*
 
+<p>&nbsp;</p>
 <p>&nbsp;</p>
 <p align="center">
   <img width="460" height="300" src="readme images\thankyou.png">
