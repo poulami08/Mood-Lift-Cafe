@@ -11,7 +11,7 @@
 ## About Mood Lift Cafe 
 
 *Using this application, one can select a menu or items along within its quantity/number. Furthermore, They can also calculate the total cost of their customer . Similarly, the café management system also has the ability to generate a bill/receipt.*
-<p>&nbsp;</p>
+
 
 ## Features 
 
@@ -30,7 +30,7 @@
     
     
 </p>
-<p>&nbsp;</p>
+
 
 ## View 
 
@@ -56,7 +56,7 @@ Admin interface view
 
 ## Database 
 
-<p>&nbsp;</p>
+
 <img width="460" height="300" src="readme images\tables.PNG">
 
 *Here we have created four tables user, category, product and bill.* 
