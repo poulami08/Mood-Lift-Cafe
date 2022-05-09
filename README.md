@@ -20,7 +20,7 @@
 * *Features to select items ordered by the customer along with their quantity.*
 * *Get total bill value within a single click.*
 * *Generate Receipt if needed.*
-<p>&nbsp;</p>
+
 
 ## Technology 
 
@@ -51,7 +51,7 @@ Admin interface view
 *An admin can Login, Place Order and Generate Bill, Change Password, Change Security Question ,  see the Bill and Order details, Manage Catgory, Add New Product, View,Edit and Delete any Product and also Verify Users.*
 </p>
 </p>
-<p>&nbsp;</p>
+
 
 ## Database 
 
@@ -63,7 +63,7 @@ Admin interface view
 *The user table have the detailes of users.The category table have the detailes of categories present in our cafe.The product table have the detailes of products available under each category and the bill table have the detailes of the customer, their orders and the total amount.*
 
 <p>&nbsp;</p>
-<p>&nbsp;</p>
+
 <p align="center">
   <img width="460" height="300" src="readme images\thankyou.png">
 </p>
