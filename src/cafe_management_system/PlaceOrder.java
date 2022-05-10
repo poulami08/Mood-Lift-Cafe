@@ -339,7 +339,7 @@ public class PlaceOrder extends javax.swing.JFrame {
                 txtgrandtotalActionPerformed(evt);
             }
         });
-        getContentPane().add(txtgrandtotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(843, 651, -1, -1));
+        getContentPane().add(txtgrandtotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(843, 651, 90, -1));
 
         btnbill.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnbill.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/generate bill & print.png"))); // NOI18N
